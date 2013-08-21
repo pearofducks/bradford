@@ -1,5 +1,7 @@
 # Bradford
 
+![bradford screenshot](https://github.com/pearofducks/bradford/raw/master/example.png)
+
 ## The status board.
 
 ### To get Bradford running...
