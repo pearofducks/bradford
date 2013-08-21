@@ -12,6 +12,7 @@
     - Debian: `apt-get install redis-server`
 - Copy the provided *categories.yml.sample* file to a working copy `cp categories.yml.sample categories.yml`
 - Run Bradford! `bin/bradford`
+- Login at '/login' to start creating posts. *(Default credentials are admin/adminPassword)*
 
 ### To customize Bradford, edit these files:
 - Set a title by editing lines 5 and 13 of `lib/bradford/views/layout.haml`
