@@ -13,9 +13,12 @@
 - Copy the provided *categories.yml.sample* file to a working copy `cp categories.yml.sample categories.yml`
 - Run Bradford! `bin/bradford`
 
-### To customize Bradford, edit these files
+### To customize Bradford, edit these files:
 - Set a title by editing lines 5 and 13 of `lib/bradford/views/layout.haml`
-- Customize your categories using categories.yml.sample as a template
+- Customize your categories in `categories.yml`
+    - Name should just be one word you can recognize when making a new post
     - Colors are in RGB format
-    - The category with priority 1 will be the only one sent over RSS
+    - Prio is where it should appear on the list. Note that prio 1 is the only one to be included in the RSS feed
+    - Icon can be any icon-name from [Font Awesome](http://fortawesome.github.io/Font-Awesome/icons/)
+    - Expire is how many days after marking a post as "expired" a post disappears forever
 - Modify all relevant web-server details by changing lines 9 through 14 of `lib/bradford/app.rb`
