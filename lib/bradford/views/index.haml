@@ -1,0 +1,21 @@
+-Category.all.each do |category|
+  .category{style: "background-color: rgba(#{category.color},0.7)"}
+    %h2.category-title= category.full_title
+    .post-container
+      -category.posts.to_a.sort{|p1,p2| Time.parse(p2.posted_at) <=> Time.parse(p1.posted_at)}.each do |post|
+        -if post.expired?
+          - expire_fade = "fade"
+        -else
+          - expire_fade = ""
+        .post{class: "#{expire_fade}"}
+          -unless post.retire_now?
+            %i.icon-2x.postpic{class: category.icon}
+            .post-content= post.html
+            %h5.time= "Started: #{Time.parse(post.posted_at).strftime('%B %e, %Y at %H:%M')}"
+            -if post.expired?
+              %h5.time= "Ended: #{Time.parse(post.expired_at).strftime('%B %e, %Y at %H:%M')}"
+            -if admin?
+              .admin-post-buttons
+                %a{href: "/admin/edit/#{post.id}"} Edit
+                -unless post.expired?
+                  %a{href: "/admin/expire/#{post.id}"} Expire

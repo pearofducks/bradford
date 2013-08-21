@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Lato Hairline'), local('Lato-Hairline'), url('/assets/font/Lato-Hairline.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url('/assets/font/Lato-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url('/assets/font/Lato-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url('/assets/font/Lato-Bold.ttf') format('truetype');
+}
+
+body { font-family: "Lato", sans-serif; font-smoothing: antialiased; text-rendering: optimizeLegibility; color: #2c3e50; background-color: rgba(44, 62, 80,1.0); line-height: 1; }
+.titlebar { padding: 32px 0; background-color: rgba(52, 73, 94,1.0); color: white; }
+.title { text-transform: uppercase; text-shadow: 0 1px 0 rgba(0,0,0,0.5); letter-spacing: 2px; font-weight: 800; padding-left: 48px; display: inline-block; }
+.admin-top { color: white; float: right; padding-right: 48px; line-height: 2em; font-size: 1.2em; text-transform: uppercase; }
+.admin-top li { display: inline; list-style-type: none; padding-left: 20px; }
+.admin-top a { color: white; text-decoration: none; }
+.admin-post-buttons { float: right; }
+.admin-post-buttons a { color: white; font-weight: 600; text-transform: uppercase; text-decoration: none; padding-left: 15px; }
+.category { padding: 32px 0; }
+.category-title { color: white; text-shadow: 0 1px 0 rgba(0,0,0,0.3); font-weight: 300; padding-left: 48px; }
+.post-container { float: right; padding-right: 96px; width: 40%; }
+.post { font-weight: 400; color: white; padding-top: 32px; padding-bottom: 48px; position: relative; }
+.post.fade { opacity: 0.25; transition: all 1s ease-in-out;}
+.post.fade:hover { opacity: 1; }
+.post .postpic { line-height: 0; position: absolute; top: 40%; left: -75px; color: rgba(0,0,0,0.25); }
+.post .time { font-size: 1em; font-weight: 400; text-align: right; color: rgba(0,0,0,0.4);}
+.post h1 { text-shadow: 0 1px 3px rgba(0,0,0,0.3); font-weight: 400; }
+.post h2 { font-weight: 900; font-size: 1.4em; padding-bottom: 5px; border-bottom: 1px solid rgba(255,255,255,0.25); padding-top: 0.5em; }
+.post h3 { font-weight: 800; color: rgba(0,0,0,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5em; }
+.post h4 { text-transform: uppercase; opacity: 0.75; letter-spacing: 1px; font-size: 0.9em; }
+.post h5 { }
+.post a { color: white; }
+.post a:visited { color: rgba(255,255,255,0.75); }
+.post p { line-height: 1.75; font-weight: 400; margin-top: 0; }
+.post b, .post strong { }
+.post blockquote { font-weight: 600; font-style: italic; font-size: 0.9em; }
+.post ul { line-height: 1.5em; }
+.post li { line-height: 1.5em; }
+.post code { text-shadow: 0px 1px 1px rgba(0,0,0,0.25); padding: 3px; background: rgba(255,255,255,0.25); }
+.category:before, .category:after, .titlebar:before, .titlebar:after { content:""; display:table; }
+.category:after, .titlebar:after { clear:both; }
+.new-post-container { color: white; width: 80%; margin: 0 auto; padding-top: 24px; }
+.new-post-container h2 { text-transform: uppercase; font-weight: 400;  }
+.new-post-container form { margin-left: 10%; }
+.new-post-title { font-weight: 300; }
+.post-type * { display: inline-block; vertical-align: middle; }
+.post-text h2, .post-type h2 { width: 20%; }
+.post-text h2, .post-text textarea { display: inline-block; vertical-align: top; }
+.post-text textarea { margin-top: 24px; width: 50%; }
+.radio label { padding-right: 10px; font-weight: 600; }
+.bottom { margin-left: 20%; }
+.error { color: rgba(255,255,255,0.5); font-size: 3em; text-align: center; }
+.error a { font-size: 0.5em; }
+.error a:visited { color: inherit; }
+.flash {
+text-align: center;
+font-size: 1.75em;
+width: 100%;
+color: white;
+position: absolute;
+z-index: 101;
+top: 0;
+left: 0;
+right: 0;
+background-color: rgba(44, 62, 80,1);
+line-height: 2.5;
+overflow: hidden; 
+transform: translateY(-300px);
+animation: slideDown 4s 1s 1 ease-in-out forwards;
+}
+@keyframes slideDown {
+    0%, 100% { transform: translateY(-300px); }
+    10%, 90% { transform: translateY(100px); }
+}

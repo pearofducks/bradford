@@ -1,0 +1,46 @@
+%h1(style="padding-bottom: 20px;") Edit a post
+%form(action="/admin/post" method="post")
+  .row
+    .span2
+      %h4 Post Type
+      .btn-toolbar
+        .btn-group.btn-group-vertical
+          -if @post.type == :red
+            %a.btn.btn-primary.red-button.active(href="#" name="red" id="red" onclick="regButton(this); $('#forgotType').hide(); return false;" data-toggle="tooltip" data-placement="right" title data-original-title="Current Faults")
+              %i.icon-bell.icon-2x
+            %input(type="hidden" value="red" name="type" id="type")
+          -else
+            %a.btn.btn-primary.red-button(href="#" name="red" id="red" onclick="regButton(this); $('#forgotType').hide(); return false;" data-toggle="tooltip" data-placement="right" title data-original-title="Current Faults")
+              %i.icon-bell.icon-2x
+          -if @post.type == :blue
+            %a.btn.btn-primary.blue-button.active(href="#" name="blue" id="blue" onclick="regButton(this); $('#forgotType').hide(); return false;" data-toggle="tooltip" data-placement="right" title data-original-title="Projects in Beta")
+              %i.icon-cogs.icon-2x
+            %input(type="hidden" value="blue" name="type" id="type")
+          -else
+            %a.btn.btn-primary.blue-button(href="#" name="blue" id="blue" onclick="regButton(this); $('#forgotType').hide(); return false;" data-toggle="tooltip" data-placement="right" title data-original-title="Projects in Beta")
+              %i.icon-cogs.icon-2x
+          -if @post.type == :green
+            %a.btn.btn-primary.green-button.active(href="#" name="green" id="green" onclick="regButton(this); $('#forgotType').hide(); return false;" data-toggle="tooltip" data-placement="right" title data-original-title="Releases")
+              %i.icon-bullhorn.icon-2x
+            %input(type="hidden" value="green" name="type" id="type")
+          -else
+            %a.btn.btn-primary.green-button(href="#" name="green" id="green" onclick="regButton(this); $('#forgotType').hide(); return false;" data-toggle="tooltip" data-placement="right" title data-original-title="Releases")
+              %i.icon-bullhorn.icon-2x
+    .span10
+      %h4 Post Text
+      %textarea.span10(required type="text" rows="10" name="copy" id="copy")= @post.markdown
+      %span.help-block The text will be rendered using Markdown. For more information please see the Markdown guide.
+  %button.btn.btn-large.btn-block.btn-danger.hide(id= "forgotType" type="button" style="margin-top: 20px;") You haven't selected a post type!
+  %button.btn.btn-large.btn-block(type="submit" style="margin-top: 20px;") Submit
+  :javascript
+    function regButton(bu)
+    {
+      var activeButton = document.getElementById("type");
+      activeButton.value = bu.id;
+      return;
+    }
+  :javascript
+    $("form").submit(function() {
+      if (document.getElementById('type').value.length === 0) { $('#forgotType').show(); return false; }
+      else { return true; }
+    });

@@ -1,0 +1,16 @@
+.new-post-container
+  %h1.new-post-title Create a new post
+  %hr
+  %form{action: "/admin/post", method: "post"}
+    .post-type
+      %h2 Post Type
+      .radio
+        -Category.all.each do |category|
+          %input{type: "radio", name: "category", value: "#{category.name}", id: "#{category.name}", checked: @post_category == category.name}
+          %label{for: "#{category.name}"}= category.name.capitalize
+    .post-text
+      %h2 Post Text
+      %textarea(required type="text" rows="10" name="copy" id="copy")= (@post_content || "")
+    .bottom
+      %p The text will be rendered using Markdown.
+      %button.pure-button(type="submit") Submit

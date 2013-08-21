@@ -1,0 +1,22 @@
+---
+Categories:
+  - Name  : fault
+    Color : "192, 57, 43"
+    Prio  : 1
+    Title : Current Faults
+    Icon  : icon-bell
+    Expire: 3
+
+  - Name  : beta
+    Color : "41, 128, 185"
+    Prio  : 2
+    Title : Projects in Beta
+    Icon  : icon-cogs
+    Expire: 2
+
+  - Name  : release
+    Color : "39, 174, 96"
+    Prio  : 3
+    Title : Releases
+    Icon  : icon-bullhorn
+    Expire: 1
