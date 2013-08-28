@@ -1,27 +1,27 @@
 require 'cinch'
 
 module Bradford
-  class StatusBot
+  class BradfordBot
     include Cinch::Plugin
 
-    match /.*status-bot.*undo;.*/i, :method => :undo, :use_prefix => false
-    match /.*status-bot.*post;(.+)/i, :method => :post, :use_prefix => false
-    match /.*status-bot.*fault;(.+)/i, :method => :post, :use_prefix => false
-    match /.*status-bot.*list;.*/i, :method => :list, :use_prefix => false
-    match /.*status-bot.*expire;(.+)/i, :method => :expire, :use_prefix => false
-    match /.*status-bot.*help;.*/i, :method => :help, :use_prefix => false
+    match /.*bradford.*undo;.*/i, :method => :undo, :use_prefix => false
+    match /.*bradford.*post;(.+)/i, :method => :post, :use_prefix => false
+    match /.*bradford.*fault;(.+)/i, :method => :post, :use_prefix => false
+    match /.*bradford.*list;.*/i, :method => :list, :use_prefix => false
+    match /.*bradford.*expire;(.+)/i, :method => :expire, :use_prefix => false
+    match /.*bradford.*help;.*/i, :method => :help, :use_prefix => false
 
     def self.run!
       bot = Cinch::Bot.new do
         configure do |c|
-          c.nick = "status-bot"
-          c.server = "irc.yourserver.com"
-          c.port = 9999
-          c.password = "password"
+          c.nick = "bradford"
+          c.server = "irc.someserver.com"
+          c.port = 6667
+          c.password = ""
           c.ssl.use = false
-          c.realname = "Mr. Status"
-          c.channels = ["#yourchannel channelpassword"]
-          c.plugins.plugins = [StatusBot]
+          c.realname = "Bradford"
+          c.channels = ["#channelName channelPasswordIsOptional"]
+          c.plugins.plugins = [BradfordBot]
         end
       end
       bot.start
