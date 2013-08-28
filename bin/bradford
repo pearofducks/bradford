@@ -6,4 +6,3 @@ require 'bradford'
 
 Bradford.setup
 Bradford::App.run!
-#Bradford::StatusBot.run!
